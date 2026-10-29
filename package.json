@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-flightstats",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "FlightStats MCP — wraps the Cirium FlightStats Flex API (api.flightstats.com/flex)",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-flightstats": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "flightstats"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-flightstats.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/flightstats",
   "pipeworx": {
-    "sourceHash": "v1-06be0906096a71ca1b38995219e554707c9207a85b95dc6e41a7e969698e9cf1",
-    "sourceCommit": "722087a9bda73f85942e8f6bbfd598544cb0d490"
+    "mode": "gateway",
+    "slug": "flightstats",
+    "gatewaySlug": "flightstats",
+    "sourceHash": "v1-622ea76a8a4651330fe744dae737a4ae71437446ea8ad45b394a18e7fe05b5c4",
+    "sourceCommit": "bb047243cf27f32453103de186b8e6a8b6a1ce79"
   }
 }

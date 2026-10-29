@@ -1,0 +1,132 @@
+[
+  {
+    "name": "flightstats_flight_status",
+    "description": "Status of flight AA100 on a date — gate, delay, baggage. Returns operational status (scheduled vs estimated departure/arrival, gate, terminal, baggage claim) for one specific flight identified by carrier IATA code + flight number + date. Example: flightstats_flight_status({ carrier: \"AA\", flight: \"100\", year: 2026, month: 7, day: 2, _apiKey: \"appId:appKey\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "carrier": {
+          "type": "string",
+          "description": "Airline IATA code, e.g. \"AA\", \"DL\", \"BA\""
+        },
+        "flight": {
+          "type": "string",
+          "description": "Flight number (digits only), e.g. \"100\""
+        },
+        "year": {
+          "type": "integer",
+          "description": "Departure year, e.g. 2026"
+        },
+        "month": {
+          "type": "integer",
+          "description": "Departure month 1-12"
+        },
+        "day": {
+          "type": "integer",
+          "description": "Departure day of month 1-31"
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "FlightStats/Cirium credentials as \"appId:appKey\" (developer.cirium.com; free eval = 20,000 lifetime calls)"
+        }
+      },
+      "required": [
+        "carrier",
+        "flight",
+        "year",
+        "month",
+        "day",
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "flightstats_airport_status",
+    "description": "Departures/arrivals at an airport — a live board of flights leaving from or arriving at an airport on a given date/hour. Example: flightstats_airport_status({ airport: \"JFK\", type: \"dep\", year: 2026, month: 7, day: 2, hour: 14, _apiKey: \"appId:appKey\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "airport": {
+          "type": "string",
+          "description": "Airport IATA code, e.g. \"JFK\", \"LHR\", \"SFO\""
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "dep",
+            "arr"
+          ],
+          "description": "Board type: \"dep\" for departures (default), \"arr\" for arrivals"
+        },
+        "year": {
+          "type": "integer",
+          "description": "Year, e.g. 2026"
+        },
+        "month": {
+          "type": "integer",
+          "description": "Month 1-12"
+        },
+        "day": {
+          "type": "integer",
+          "description": "Day of month 1-31"
+        },
+        "hour": {
+          "type": "integer",
+          "description": "Local hour 0-23 (optional, default 0)"
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "FlightStats/Cirium credentials as \"appId:appKey\" (developer.cirium.com; free eval = 20,000 lifetime calls)"
+        }
+      },
+      "required": [
+        "airport",
+        "year",
+        "month",
+        "day",
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "flightstats_schedule",
+    "description": "Scheduled flight timetable — the published schedule (departure/arrival airports and times) for a carrier + flight number departing on a date, regardless of live operational status. Example: flightstats_schedule({ carrier: \"AA\", flight: \"100\", year: 2026, month: 7, day: 2, _apiKey: \"appId:appKey\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "carrier": {
+          "type": "string",
+          "description": "Airline IATA code, e.g. \"AA\", \"DL\", \"BA\""
+        },
+        "flight": {
+          "type": "string",
+          "description": "Flight number (digits only), e.g. \"100\""
+        },
+        "year": {
+          "type": "integer",
+          "description": "Departure year, e.g. 2026"
+        },
+        "month": {
+          "type": "integer",
+          "description": "Departure month 1-12"
+        },
+        "day": {
+          "type": "integer",
+          "description": "Departure day of month 1-31"
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "FlightStats/Cirium credentials as \"appId:appKey\" (developer.cirium.com; free eval = 20,000 lifetime calls)"
+        }
+      },
+      "required": [
+        "carrier",
+        "flight",
+        "year",
+        "month",
+        "day",
+        "_apiKey"
+      ]
+    }
+  }
+]
