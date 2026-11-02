@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-flightstats",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "FlightStats MCP — wraps the Cirium FlightStats Flex API (api.flightstats.com/flex)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "flightstats",
     "gatewaySlug": "flightstats",
-    "sourceHash": "v1-622ea76a8a4651330fe744dae737a4ae71437446ea8ad45b394a18e7fe05b5c4",
-    "sourceCommit": "bb047243cf27f32453103de186b8e6a8b6a1ce79"
+    "sourceHash": "v1-7cba9db710dd738413dac82a26740542392c9071aa0807789033dd282c0a065c",
+    "sourceCommit": "030233f6b150a38a44421f88a5fcbad123f0fea8"
   }
 }
